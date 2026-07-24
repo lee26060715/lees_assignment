@@ -1,6 +1,6 @@
 answer = input("위 문제의 정답은?")
 
-if answer == "chmod":
+if answer.lower == "chmod":
     print("정답입니다.")
 else :
     "틀렸습니다. 정답은 chmod였습니다."
