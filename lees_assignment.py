@@ -31,37 +31,36 @@ Q5. 리눅스에서 현재 날짜와 시간을 출력하는 명령어는 무엇�
 '''
 q5_answer = "date"
 
+def check_answer(user_answer, correct_answer):
+    if user_answer.lower() == correct_answer.lower():
+        print("정답입니다.")
+        return 1
+    else:
+        print(f"틀렸습니다. 정답은 {correct_answer} 였습니다.")
+        return 0
 
 quiz_list = [q1, q2, q3, q4, q5]
 
 selected = random.sample(quiz_list, 3)
 
+score = 0
+
 for quiz in selected:
     print(quiz)
-    user_answer = input("위 문제의 정답은? ")
+    user_answer = input("위 문제의 정답은? ").strip()
 
     if quiz == q1:
-        if user_answer.lower() == q1_answer:
-            print("정답입니다.")
-        else:
-            print(f"틀렸습니다. 정답은 {q1_answer} 였습니다.")
+        score += check_answer(user_answer, q1_answer)
     elif quiz == q2:
-        if user_answer.lower() == q2_answer:
-            print("정답입니다.")
-        else:
-            print(f"틀렸습니다. 정답은 {q2_answer} 였습니다.")
+        score += check_answer(user_answer, q2_answer)
     elif quiz == q3:
-        if user_answer.lower() == q3_answer :
-            print("정답입니다.")
-        else:
-            print(f"틀렸습니다. 정답은 {q3_answer} 였습니다.")
+        score += check_answer(user_answer, q3_answer)
     elif quiz == q4:
-        if user_answer.lower() == q4_answer:
-            print("정답입니다.")
-        else:
-            print(f"틀렸습니다. 정답은 {q4_answer} 였습니다.")
+        score += check_answer(user_answer, q4_answer)
     elif quiz == q5:
-        if user_answer.lower() == q5_answer:
-            print("정답입니다.")
-        else:
-            print(f"틀렸습니다. 정답은 {q5_answer} 였습니다.")
+        score += check_answer(user_answer, q5_answer)
+
+print( )
+print(f"수고하셨습니다. 총 {score} 문제맞추셨습니다.")
+rank = {0:"F",1:"C", 2:"B", 3:"A"}
+print(f"등급: {rank[score]}")
