@@ -1,3 +1,5 @@
+import random
+
 q1 = '''
 Q1. 리눅스에서 파일/폴더의 권한을 바꾸는 명령어는?
 
@@ -35,5 +37,7 @@ Q5. 리눅스에서 현재 날짜와 시간을 출력하는 명령어는 무엇�
 
 quiz_list = [q1, q2, q3, q4, q5]
 
-for quiz in quiz_list:
+selected = random.sample(quiz_list, 3)
+
+for quiz in selected:
     print(quiz)
