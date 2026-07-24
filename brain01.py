@@ -11,5 +11,5 @@ chmod
 adduser
 whoami
 history
-chmod
+date
 '''
